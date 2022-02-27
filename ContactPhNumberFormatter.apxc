@@ -1,0 +1,62 @@
+public class ContactPhNumberFormatter {
+    public static Boolean isFirstTime = true;
+    public static String countryCode='+61';
+    public static void Mobilevalidation(List<Contact> ContactList){
+        list<contact> updatecontact = new list<contact>();
+        for (Contact c : ContactList){
+            if(c.Phone != null){			
+                c.Phone = formatNumber(c.Phone);
+            }
+            // Phone validation ends here
+            // Validation for MobilePhone starts here
+            if(c.MobilePhone != null){			
+                c.MobilePhone=formatNumber(c.MobilePhone);
+            }
+            // Mobile Phone Validation ends here
+            // Home Phone validation starts here
+            if(c.HomePhone != null){
+                c.HomePhone=formatNumber(c.HomePhone);
+            }
+            // Homephone validation ends here
+            // Work Phone validation starts here
+            if(c.npe01__WorkPhone__c != null){
+                c.npe01__WorkPhone__c=formatNumber(c.npe01__WorkPhone__c);
+            }
+            // Work Phone validation ends here
+           	// Other Phone validation starts here
+            if(c.OtherPhone != null){
+                c.OtherPhone=formatNumber(c.OtherPhone);
+            }
+            // Other Phone validation ends here
+            updatecontact.add(c);
+        }
+        update updatecontact;
+    }
+    private static String formatNumber(String phone){
+        String newPhone=phone;
+        String ph='';
+        phone = phone.deleteWhitespace().replaceAll('\\D','').replaceFirst( '^0+', '');
+        if (phone.startsWith('61')){
+            phone = phone.replaceFirst( '61', '');
+        }
+        system.debug('phone after 61 replace : '+phone+' '+phone.length());
+        ph = Phone;
+        if ((ph.startsWith('1800') || ph.startsWith('1300'))  && ph.length()==10){
+            ph = countryCode+' '+ph.substring(0, 4)+' '+ph.substring(4, 7)+' '+ph.substring(7, 10);
+            newPhone = ph;
+        } else if (((ph.startswith('4')) ||ph.startswith('2') || ph.startswith('3')|| ph.startswith('7')|| ph.startswith('8')) && (ph.length()==9 || ph.length()==11)){
+            if(ph.startswith('4')){
+                ph = countryCode+' '+ph.substring(0, 3)+' '+ph.substring(3, 6)+' '+ph.substring(6, 9);
+            } else if (ph.startswith('2') || ph.startswith('3')|| ph.startswith('7')|| ph.startswith('8')){
+                // New code to handle the rare occasion that someone enters a number like (08) 08 1234 5678
+                if (ph.length()==11){
+                    ph=ph.substring(2);
+                }
+                ph = countryCode+' '+ph.substring(0, 1)+' '+ph.substring(1, 5)+' '+ph.substring(5, 9);
+            }
+            system.debug('New Phone is : '+ph);
+            newPhone = ph;
+        }
+        return newPhone;
+    }
+}

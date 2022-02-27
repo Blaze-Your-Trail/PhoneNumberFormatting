@@ -1,0 +1,9 @@
+trigger triggerOnContact on Contact (after insert, after update) {
+    List<Contact> ContactList = new List<Contact>();
+    ContactList = [SELECT ID, NAME, PHONE, MobilePhone, HomePhone, npe01__WorkPhone__c, OtherPhone FROM CONTACT where ID IN :Trigger.New];
+    system.debug('Size is : '+ContactList.size());
+     if(ContactPhNumberFormatter.isFirstTime){
+        ContactPhNumberFormatter.isFirstTime = false;
+    ContactPhNumberFormatter.Mobilevalidation(ContactList);
+     }
+ }

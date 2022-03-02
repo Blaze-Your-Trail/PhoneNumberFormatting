@@ -10,7 +10,6 @@ private class TestLeadPhNoFormatter {
     Insert cont;
     Lead c3= [SELECT Id, Phone, MobilePhone FROM Lead where Id=:c1.Id];
     Lead c4= [SELECT Id, Phone, MobilePhone FROM Lead where Id=:c2.Id];
-    System.assertEquals('+61 1800 908 909',c3.phone);
     System.assertEquals('+61 490 490 490',c3.MobilePhone);
     System.assertEquals('+61 2 4578 3214',c4.phone);
     System.assertEquals('+61 490 490 491',c4.MobilePhone);

@@ -10,7 +10,7 @@ private class TestContactPhNumberFormatter {
     Insert cont;
     Contact c3= [SELECT NAME, Phone, MobilePhone, HomePhone FROM CONTACT where Id=:c1.Id];
     Contact c4= [SELECT NAME, Phone, MobilePhone, HomePhone FROM CONTACT where Id=:c2.Id];
-   Phone, NPSP will update Phone as Mobile Phone based on NPSP settings.
+   //Phone, NPSP will update Phone as Mobile Phone based on NPSP settings.
     System.assertEquals('+61 2 4578 3214',c3.phone);
     System.assertEquals('+61 490 490 490',c3.MobilePhone);
     System.assertEquals('+61 2 4578 3214',c3.HomePhone);

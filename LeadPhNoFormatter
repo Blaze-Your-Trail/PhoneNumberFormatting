@@ -1,0 +1,23 @@
+public class LeadPhNoFormatter {
+    public static Boolean isFirstTime = true;
+    public static void MobileValidation(List<Lead> LeadList){
+        try{
+            list<Lead> updateLead = new list<Lead>();
+            for (Lead c : LeadList){
+                if(c.Phone != null){
+                    c.Phone=PhoneNumberUtilities.formatNumber(c.Phone);
+                }
+                // Phone validation ends here
+                // Validation for MobilePhone starts here
+                if(c.MobilePhone != null){
+                    c.MobilePhone=PhoneNumberUtilities.formatNumber(c.MobilePhone);
+                }
+                // Mobile Phone Validation ends here
+                updateLead.add(c);
+            }
+            update updateLead;
+        } catch (Exception e){
+            System.debug(e.getMessage());
+        }
+    }
+}

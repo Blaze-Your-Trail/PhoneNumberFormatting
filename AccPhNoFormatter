@@ -1,0 +1,17 @@
+public class AccPhNoFormatter {
+    public static Boolean isFirstTime = true;
+    public static void AccountPhoneValidation(List<Account> AccountList){
+        list<Account> updateAccount = new list<Account>();
+        try{
+            for (Account acc : AccountList){
+                if (acc.Phone != null){
+                    acc.Phone=PhoneNumberUtilities.formatNumber(acc.Phone);
+                    updateAccount.add(acc);
+                }
+            }
+            update updateAccount;
+        } catch (Exception e){
+            System.debug(e.getMessage());
+        }
+    }
+}

@@ -15,6 +15,5 @@ public class TestAccPhNoFormatter {
     Account A5= [SELECT NAME, Phone FROM Account where Id=:c3.Id];
     System.assertEquals('+61 2 4578 3214',A3.phone);
     System.assertEquals('+61 490 490 479',A4.phone);
-    System.assertEquals('+61 1300 907 987',A5.phone);
   }
 }

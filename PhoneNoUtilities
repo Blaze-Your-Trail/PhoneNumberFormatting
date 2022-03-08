@@ -11,9 +11,8 @@ public with sharing class PhoneNoUtilities {
             system.debug('phone after 61 replace : '+phone+' '+phone.length());
             ph = Phone;
             if ((ph.startsWith('1800') || ph.startsWith('1300'))  && ph.length()==10){
-                return newPhone;
-                //ph = countryCode+' '+ph.substring(0, 4)+' '+ph.substring(4, 7)+' '+ph.substring(7, 10);
-                // newPhone = ph; WE DON'T WANT TO FORMAT 1800 AND 1300 NUMBERS WITH +61
+                ph = ph.substring(0, 4)+' '+ph.substring(4, 7)+' '+ph.substring(7, 10);
+                newPhone = ph; 
             } else if (((ph.startswith('4')) ||ph.startswith('2') || ph.startswith('3')|| ph.startswith('7')|| ph.startswith('8')) && (ph.length()==9 || ph.length()==11)){
                 if(ph.startswith('4')){
                     ph = countryCode+' '+ph.substring(0, 3)+' '+ph.substring(3, 6)+' '+ph.substring(6, 9);

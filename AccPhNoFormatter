@@ -5,7 +5,7 @@ public class AccPhNoFormatter {
         try{
             for (Account acc : AccountList){
                 if (acc.Phone != null){
-                    acc.Phone=PhoneNumberUtilities.formatNumber(acc.Phone);
+                    acc.Phone=PhoneNoUtilities.formatNumber(acc.Phone);
                     updateAccount.add(acc);
                 }
             }

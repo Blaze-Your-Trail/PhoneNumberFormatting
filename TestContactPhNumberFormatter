@@ -1,5 +1,5 @@
 @isTest
-private class TestContactPhNumberFormatter {
+private class TestContactPhoneNoFormatter {
   @isTest
   private static void testInsertContact() {
     List<CONTACT> cont = new List<CONTACT>();

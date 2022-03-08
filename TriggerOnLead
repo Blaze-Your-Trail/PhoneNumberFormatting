@@ -1,4 +1,4 @@
-trigger triggerOnLead on Lead (after insert, after update) {
+trigger TriggerOnLead on Lead (after insert, after update) {
     List<Lead> LeadList = new List<Lead>();
     try{
         LeadList = [SELECT ID, Phone, MobilePhone FROM Lead where ID IN :Trigger.New];

@@ -5,7 +5,7 @@ public class ContactPhNoFormatter {
             list<contact> updatecontact = new list<contact>();
             for (Contact c : ContactList){
                 if(c.Phone != null){
-                    c.Phone = PhoneNumberUtilities.formatNumber(c.Phone);
+                    c.Phone = PhoneNoUtilities.formatNumber(c.Phone);
                 }
                 // Phone validation ends here
                 // Validation for MobilePhone starts here

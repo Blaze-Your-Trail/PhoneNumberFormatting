@@ -1,4 +1,4 @@
-public class ContactPhNumberFormatter {
+public class ContactPhNoFormatter {
     public static Boolean isFirstTime = true;
     public static void Mobilevalidation(List<Contact> ContactList){
         try{

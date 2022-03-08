@@ -6,6 +6,7 @@ public class AccPhNoFormatter {
             for (Account acc : AccountList){
                 if (acc.Phone != null){
                     acc.Phone=PhoneNoUtilities.formatNumber(acc.Phone);
+                    acc.npo02__HouseholdPhone__c=PhoneNoUtilities.formatNumber(acc.npo02__HouseholdPhone__c);
                     updateAccount.add(acc);
                 }
             }

@@ -5,7 +5,7 @@ public class LeadPhNoFormatter {
             list<Lead> updateLead = new list<Lead>();
             for (Lead c : LeadList){
                 if(c.Phone != null){
-                    c.Phone=PhoneNumberUtilities.formatNumber(c.Phone);
+                    c.Phone=PhoneNoUtilities.formatNumber(c.Phone);
                 }
                 // Phone validation ends here
                 // Validation for MobilePhone starts here

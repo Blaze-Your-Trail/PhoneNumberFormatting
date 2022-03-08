@@ -1,4 +1,4 @@
-public with sharing class PhoneNumberUtilities {
+public with sharing class PhoneNoUtilities {
     public static String formatNumber(String phone){
         String countryCode='+61';
         String newPhone=phone;

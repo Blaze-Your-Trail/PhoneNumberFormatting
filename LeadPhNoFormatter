@@ -10,7 +10,7 @@ public class LeadPhNoFormatter {
                 // Phone validation ends here
                 // Validation for MobilePhone starts here
                 if(c.MobilePhone != null){
-                    c.MobilePhone=PhoneNumberUtilities.formatNumber(c.MobilePhone);
+                    c.MobilePhone=PhoneNoUtilities.formatNumber(c.MobilePhone);
                 }
                 // Mobile Phone Validation ends here
                 updateLead.add(c);

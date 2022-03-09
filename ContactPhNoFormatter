@@ -10,22 +10,22 @@ public class ContactPhNoFormatter {
                 // Phone validation ends here
                 // Validation for MobilePhone starts here
                 if(c.MobilePhone != null){
-                    c.MobilePhone=PhoneNumberUtilities.formatNumber(c.MobilePhone);
+                    c.MobilePhone=PhoneNoUtilities.formatNumber(c.MobilePhone);
                 }
                 // Mobile Phone Validation ends here
                 // Home Phone validation starts here
                 if(c.HomePhone != null){
-                    c.HomePhone=PhoneNumberUtilities.formatNumber(c.HomePhone);
+                    c.HomePhone=PhoneNoUtilities.formatNumber(c.HomePhone);
                 }
                 // Homephone validation ends here
                 // Work Phone validation starts here
                 if(c.npe01__WorkPhone__c != null){
-                    c.npe01__WorkPhone__c=PhoneNumberUtilities.formatNumber(c.npe01__WorkPhone__c);
+                    c.npe01__WorkPhone__c=PhoneNoUtilities.formatNumber(c.npe01__WorkPhone__c);
                 }
                 // Work Phone validation ends here
                 // Other Phone validation starts here
                 if(c.OtherPhone != null){
-                    c.OtherPhone=PhoneNumberUtilities.formatNumber(c.OtherPhone);
+                    c.OtherPhone=PhoneNoUtilities.formatNumber(c.OtherPhone);
                 }
                 // Other Phone validation ends here
                 updatecontact.add(c);

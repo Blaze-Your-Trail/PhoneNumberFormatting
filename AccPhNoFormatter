@@ -4,9 +4,16 @@ public class AccPhNoFormatter {
         list<Account> updateAccount = new list<Account>();
         try{
             for (Account acc : AccountList){
+                Boolean changeMade=false;
                 if (acc.Phone != null){
-                    acc.Phone=PhoneNoUtilities.formatNumber(acc.Phone);
-                    acc.npo02__HouseholdPhone__c=PhoneNoUtilities.formatNumber(acc.npo02__HouseholdPhone__c);
+                    acc.Phone=PhoneNumberUtilities.formatNumber(acc.Phone);
+                    changeMade=true;
+                }
+                if(acc.npo02__HouseholdPhone__c!=null){
+                    acc.npo02__HouseholdPhone__c=PhoneNumberUtilities.formatNumber(acc.npo02__HouseholdPhone__c);
+                    changeMade=true;
+                }
+                if (changeMade){
                     updateAccount.add(acc);
                 }
             }
@@ -15,4 +22,3 @@ public class AccPhNoFormatter {
             System.debug(e.getMessage());
         }
     }
-}

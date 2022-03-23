@@ -6,11 +6,11 @@ public class AccPhNoFormatter {
             for (Account acc : AccountList){
                 Boolean changeMade=false;
                 if (acc.Phone != null){
-                    acc.Phone=PhoneNumberUtilities.formatNumber(acc.Phone);
+                    acc.Phone=PhoneNoUtilities.formatNumber(acc.Phone);
                     changeMade=true;
                 }
                 if(acc.npo02__HouseholdPhone__c!=null){
-                    acc.npo02__HouseholdPhone__c=PhoneNumberUtilities.formatNumber(acc.npo02__HouseholdPhone__c);
+                    acc.npo02__HouseholdPhone__c=PhoneNoUtilities.formatNumber(acc.npo02__HouseholdPhone__c);
                     changeMade=true;
                 }
                 if (changeMade){

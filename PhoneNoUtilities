@@ -8,7 +8,6 @@ public with sharing class PhoneNoUtilities {
             if (phone.startsWith('61')){
                 phone = phone.replaceFirst( '61', '');
             }
-            system.debug('phone after 61 replace : '+phone+' '+phone.length());
             ph = Phone;
             if ((ph.startsWith('1800') || ph.startsWith('1300'))  && ph.length()==10){
                 ph = ph.substring(0, 4)+' '+ph.substring(4, 7)+' '+ph.substring(7, 10);
@@ -30,7 +29,6 @@ public with sharing class PhoneNoUtilities {
                     }
                     ph = countryCode+' '+ph.substring(0, 1)+' '+ph.substring(1, 5)+' '+ph.substring(5, 9);
                 }
-                system.debug('New Phone is : '+ph);
                 newPhone = ph;
             }
         } catch (Exception e){

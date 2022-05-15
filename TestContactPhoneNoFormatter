@@ -12,10 +12,10 @@ private class TestContactPhoneNoFormatter {
     Contact c4= [SELECT NAME, Phone, MobilePhone, HomePhone FROM CONTACT where Id=:c2.Id];
    //Phone, NPSP will update Phone as Mobile Phone based on NPSP settings.
     System.assertEquals('+61 2 4578 3214',c3.phone);
-    System.assertEquals('+61 2 4578 3214',c3.MobilePhone);
+    System.assertEquals('+61 490 490 490',c3.MobilePhone);
     System.assertEquals('+61 490 490 490',c3.HomePhone);
     System.assertEquals('+61 490 490 479',c4.phone);
-    System.assertEquals('+61 490 490 479',c4.MobilePhone);
+    System.assertEquals('+61 490 490 491',c4.MobilePhone);
     System.assertEquals('1300 134 544',c4.HomePhone);
   }
 }

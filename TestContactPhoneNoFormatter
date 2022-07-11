@@ -1,4 +1,4 @@
-@isTest
+  @isTest
 private class TestContactPhoneNoFormatter {
   @isTest
   private static void testInsertContact() {
